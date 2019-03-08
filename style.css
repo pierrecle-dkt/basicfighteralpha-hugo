@@ -1,0 +1,114 @@
+html {
+    background: #1c3f70;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 300;
+}
+
+.fighters {
+    display: flex;
+    vertical-align: center;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.fighters > div {
+    width: 30vw;
+    text-align: center;
+}
+
+.fighters > div > * {
+    display: block;
+}
+.fighters .anim {
+    text-align: center;
+}
+
+.fighters img {
+    max-height: 30vh;
+    max-width: 30vw;
+}
+.stats {
+    border: 2px dashed #fafafa;
+    margin: 10px auto;
+    padding: 5px;
+    width: 80%;
+}
+.stats > * {
+    display: flex;
+    justify-content: space-between;
+}
+.stats > * > * {
+    display: block;
+}
+.stats .bar-container {
+    height: 15px;
+    width: 100px;
+    display: block;
+    background: #ccc;
+}
+.stats .bar-container .bar {
+    display: block;
+    height: 100%;
+    transition: width 100ms ease-in-out;
+    text-align: left;
+}
+.stats .bar-container[data-life] .bar {
+    background: #e23812;
+}
+.stats .bar-container[data-strength] .bar {
+    background: #5792f1;
+}
+
+.playerName {
+    text-align: center;
+    font-family: monospace;
+    font-size: 16px;
+}
+.current {
+    height: 10px;
+    width: 0px;
+    background: rgb(208, 217, 255);
+    margin: 10px auto;
+    border-radius: 5px;
+
+    transition: width 500ms ease-in-out;
+}
+.current.visible {
+    width: 100px;
+}
+
+.actions {
+    text-align: center;
+}
+
+button {
+    margin: 20px;
+    padding: 10px;
+    border: 1px sold #aaa;
+    background: #fafafa;
+}
+
+.rules {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Animations */
+.fighters > div, .fighters > div .stats {
+    transition: all 250ms ease-in-out;
+}
+.fighters > div.attack img {
+    opacity: 0.2;
+}
+.fighters > div.attack .stats {
+    background: #f26657;
+}
+.fighters > div.defend .stats {
+    background: #66ee78;
+}

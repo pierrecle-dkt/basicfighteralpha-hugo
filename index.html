@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Basic fighter Alpha</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Basic fighter Alpha</h1>
+        <div class="fighters">
+            <div data-player="1">
+                <div class="anim"><img src="./ryu.gif" /></div>
+                <div class="stats">
+                    <div>
+                        <span>Vie:</span>
+                        <span class="bar-container" data-life><span class="bar"></span></span>
+                    </div>
+                    <div>
+                        <span>Force:</span>
+                        <span class="bar-container" data-strength><span class="bar"></span></span>
+                    </div>
+                </div>
+                <span class="playerName">Joueur 1</span>
+                <div class="current"></div>
+            </div>
+            <div data-player="2">
+                    <div class="anim"><img src="./guile.gif" /></div>
+                <div class="stats">
+                    <div>
+                        <span>Vie:</span>
+                        <span class="bar-container" data-life><span class="bar"></span></span>
+                    </div>
+                    <div>
+                        <span>Force:</span>
+                        <span class="bar-container" data-strength><span class="bar"></span></span>
+                    </div>
+                </div>
+                <span class="playerName">Joueur 2</span>
+                <div class="current"></div>
+                <div><label><input type="radio" name="p2" checked data-ai="none"/>Humain</label></div>
+                <div><label><input type="radio" name="p2" data-ai="nai" />Pas très intelligente artificielle</label></div>
+                <div><label><input type="radio" name="p2" data-ai="ai" />Intelligente artificielle</label></div>
+            </div>
+        </div>
+        <div class="actions">
+            <button data-action="attaque">Attaque</button>
+            <button data-action="defense">Défense</button>
+        </div>
+        <div class="rules">
+            <h2>Règles</h2>
+            <ul>
+                <li>PV : points de vie</li>
+                <li>PF : points de force</li>
+            </ul>
+            <h3>Attaque</h3>
+            <ul>
+                <li>-20 PV -(PF.joueur - PF.adversaire) => si l'adversaire est plus fort que le joueur, il perd moins de PV</li>
+                <li>+10 PF pour le joueur </li>
+            </ul>
+            <h3>Défense</h3>
+            <ul>
+                <li>+75% PV pour le joueur</li>
+                <li>-10% PF pour l'adversaire</li>
+                <li>+75% PF pour le joueur</li>
+            </ul>
+        </div>
+        <script src="./game.js"></script>
+    </body>
+</html>
